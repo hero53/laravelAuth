@@ -28,7 +28,9 @@ class AuthServiceProvider extends ServiceProvider
             return (new MailMessage)
                 ->subject('Activation de compte LARAVEL')
               //  ->line('Click the button below to verify your email address.')
-                ->action('Activer votre compte', $url);
+                ->action('Activer votre compte', $url)
+                ->view('emails.verify', compact('url'));
+
         });
     }
 }
